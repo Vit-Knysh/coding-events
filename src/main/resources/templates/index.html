@@ -2,15 +2,17 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8"/> <!-- Note the closing '/' character -->
-    <title>Coding Events</title>
+    <title th:text="${pageTitle}"></title>
 </head>
 <body>
-<h1>Coding Events</h1>
+<h1 th:replace = "fragments :: styleHeader"></h1>
 
-<nav>
-    <ul>
-        <li><a href="/events">All Events</a> </li>
-    </ul>
-</nav>
+
+<p th:replace = "fragments :: linkList"></p>
+<!--<nav>-->
+<!--    <ul>-->
+<!--        <li><a href="/events">All Events</a> </li>-->
+<!--    </ul>-->
+<!--</nav>-->
 </body>
 </html>
