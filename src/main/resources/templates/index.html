@@ -1,18 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8"/> <!-- Note the closing '/' character -->
-    <title th:text="${pageTitle}"></title>
-</head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
 <body>
-<h1 th:replace = "fragments :: styleHeader"></h1>
 
+<h1>Coding Events</h1>
 
-<p th:replace = "fragments :: linkList"></p>
-<!--<nav>-->
-<!--    <ul>-->
-<!--        <li><a href="/events">All Events</a> </li>-->
-<!--    </ul>-->
-<!--</nav>-->
+<header th:replace="fragments :: header"></header>
+
 </body>
 </html>

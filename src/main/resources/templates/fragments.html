@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8">
-    <title th:text="${title}"></title>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:fragment="head">
+    <meta charset="UTF-8"/>
+    <title>Coding Events</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<h1 th:fragment = "styleHeader" class="fancyTitle" th:text="${title}"></h1>
 
-<th:block th:fragment = "linkList">
-    <hr>
-    <a href="https://www.launchcode.org">LaunchCode</a><br/>
-    <a href="https://www.lego.com">Play Well</a> <br/>"
-    <a href = "https://www.webelements.com">Other Building Blocks</a>
-</th:block>
-
+<nav th:fragment="header">
+    <h1 th:text="${title}">Coding Events</h1>
+    <ul>
+        <li><a href="/events">All Events</a></li>
+        <li><a href="/events/create">Create Event</a></li>
+    </ul>
+</nav>
 
 </body>
 </html>
