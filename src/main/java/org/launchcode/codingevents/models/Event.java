@@ -2,10 +2,14 @@ package org.launchcode.codingevents.models;
 
 import java.util.Objects;
 
+/**
+ * Created by Chris Bay
+ */
 public class Event {
 
     private int id;
     private static int nextId = 1;
+
     private String name;
     private String description;
 
@@ -14,7 +18,6 @@ public class Event {
         this.description = description;
         this.id = nextId;
         nextId++;
-
     }
 
     public String getName() {
@@ -39,7 +42,7 @@ public class Event {
 
     @Override
     public String toString() {
-        return  name;
+        return name;
     }
 
     @Override
