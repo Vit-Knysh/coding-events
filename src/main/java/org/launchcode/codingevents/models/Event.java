@@ -19,6 +19,7 @@ public class Event {
     @Size(max = 500, message = "Description is too long!")
     private String description;
 
+    @NotBlank
     @Email(message = "Invalid email.Please, try again.")
     private String contactEmail;
 
