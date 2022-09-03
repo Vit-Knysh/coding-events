@@ -9,10 +9,10 @@
 
     <th:block th:each="event : ${events}">
         <div class="form-group">
-        <label>
-            <span th:text="${event.name}"></span>
-            <input type="checkbox" name="eventIds" th:value="${event.id}" class="form-control">
-        </label>
+            <label>
+                <span th:text="${event.name}"></span>
+                <input type="checkbox" name="eventIds" th:value="${event.id}" class="form-control">
+            </label>
         </div>
     </th:block>
 

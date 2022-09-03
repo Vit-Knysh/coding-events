@@ -35,9 +35,9 @@ public class EventController {
                                          Errors errors, Model model) {
         if(errors.hasErrors()) {
             model.addAttribute("title", "Create Event");
-//            model.addAttribute("errorMsg", "Invalid data!");
             return "events/create";
         }
+
         EventData.add(newEvent);
         return "redirect:";
     }
