@@ -17,36 +17,35 @@ import javax.validation.Valid;
 @RequestMapping("eventCategories")
 public class EventCategoryController {
 
-        @Autowired
-        private EventCategoryRepository eventCategoryRepository;
+    @Autowired
+    private EventCategoryRepository eventCategoryRepository;
 
-        @GetMapping
-        public String displayAllCategories(Model model) {
-            model.addAttribute("title", "All Categories");
-            model.addAttribute("categories", eventCategoryRepository.findAll());
-            return "eventCategories/index";
-        }
+    @GetMapping
+    public String displayAllCategories(Model model) {
+        model.addAttribute("title", "All Categories");
+        model.addAttribute("categories", eventCategoryRepository.findAll());
+        return "eventCategories/index";
+    }
 
-        @GetMapping("create")
-        public String renderCreateEventCategoryForm(Model model) {
+    @GetMapping("create")
+    public String renderCreateEventCategoryForm(Model model) {
+        model.addAttribute("title", "Create Category");
+        model.addAttribute(new EventCategory());
+        return "eventCategories/create";
+    }
+
+    @PostMapping("create")
+    public String processCreateEventCategoryForm(@Valid @ModelAttribute EventCategory eventCategory,
+                                                 Errors errors, Model model) {
+
+        if (errors.hasErrors()) {
             model.addAttribute("title", "Create Category");
             model.addAttribute(new EventCategory());
             return "eventCategories/create";
         }
 
-        @PostMapping("create")
-        public String processCreateEventCategoryForm(@Valid @ModelAttribute EventCategory eventCategory,
-                                                     Errors errors, Model model) {
-
-            if (errors.hasErrors()) {
-                model.addAttribute("title", "Create Category");
-                model.addAttribute(new EventCategory());
-                return "eventCategories/create";
-            }
-
-            eventCategoryRepository.save(eventCategory);
-            return "redirect:";
-        }
+        eventCategoryRepository.save(eventCategory);
+        return "redirect:";
+    }
 
 }
-
