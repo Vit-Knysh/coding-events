@@ -89,7 +89,7 @@ public class EventController {
     public String displayEventDetails(@RequestParam Integer eventId, Model model) {
         Optional<Event> result = eventRepository.findById(eventId);
         if(result.isEmpty()) {
-            model.addAttribute("title", "Invalid Event ID: " + eventId)
+            model.addAttribute("title", "Invalid Event ID: " + eventId);
         }else {
             Event event = result.get();
             model.addAttribute("title", event.getName() + "Details");
